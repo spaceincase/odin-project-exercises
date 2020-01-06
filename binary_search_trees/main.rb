@@ -22,6 +22,8 @@ puts "4. try to unbalance the tree by adding several numbers > 100"
   tree.insert(102)
   tree.insert(103)
   puts tree.level_order {|node| print "#{node.val} "}
+  tree.delete(101)
+  puts tree.level_order {|node| print "#{node.val} "}
 puts "5. Confirm that the tree is unbalanced by calling `#balanced?`"
   puts "Balanced?: #{tree.balanced?}"
 puts "6. Balance the tree by calling `#rebalance!`"

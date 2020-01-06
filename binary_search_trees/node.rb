@@ -1,14 +1,27 @@
 class Node
   include Comparable
+
   attr_accessor :val, :left, :right
 
-  def initialize(val, left = nil, right = nil)
-    self.val = val
-    self.left = left
-    self.right = right
+  def initialize(value = nil)
+    @val = value
+    @left = nil
+    @right = nil
   end
 
-  def <=>(node)
-    @val <=> node.val
+  def is_leaf?
+    self.left.nil? && self.right.nil?
+  end
+
+  def one_child?
+    (self.left.nil? || self.right.nil?) && !self.is_leaf?
+  end
+
+  def <=>(value)
+    if value.is_a? Node
+      @val <=> value.val
+    else
+      @val <=> value
+    end
   end
 end
