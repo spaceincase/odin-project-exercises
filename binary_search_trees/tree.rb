@@ -57,6 +57,8 @@ class Tree
     # Use level_order method to find node
     # Implicit return
     level_order {|node| return node if node == value}
+    # Also added Enumerable for lawlz!
+    # @root.each {|node| return node if node == value}
   end
 
   # Super-duper Bonus!

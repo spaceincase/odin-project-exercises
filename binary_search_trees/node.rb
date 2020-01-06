@@ -1,5 +1,6 @@
 class Node
   include Comparable
+  include Enumerable
 
   attr_accessor :val, :left, :right
 
@@ -7,6 +8,12 @@ class Node
     @val = value
     @left = nil
     @right = nil
+  end
+
+  def each(&block)
+    block.call(self)
+    left.each(&block) if left
+    right.each(&block) if right
   end
 
   def is_leaf?

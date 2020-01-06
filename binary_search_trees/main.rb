@@ -9,7 +9,7 @@ def print_tree_orders(tree)
 end
 
 puts "1. Create a binary search tree from an array of random numbers (`Array.new(15) { rand(1..100) }`)"
-  test_array = Array.new(15) {rand(1..100)}
+  test_array = *(1..10)
   puts "Array: #{test_array}"
   tree = Tree.new(test_array)
   puts "Tree: #{tree}"
@@ -32,3 +32,5 @@ puts "7. Confirm that the tree is balanced by calling `#balanced?`"
 puts "8. Print out all elements in level, pre, post, and in order"
   puts "Breadth-Firsth:"
   print_tree_orders(tree)
+puts "9. Find a node!"
+  puts tree.root.each {|node| print "#{node.val} "}
