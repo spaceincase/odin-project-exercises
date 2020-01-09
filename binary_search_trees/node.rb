@@ -11,8 +11,9 @@ class Node
   end
 
   def each(&block)
-    block.call(self)
+    # Traverses tree inorder 
     left.each(&block) if left
+    block.call(self)
     right.each(&block) if right
   end
 
